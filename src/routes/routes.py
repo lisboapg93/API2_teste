@@ -3,12 +3,13 @@ from flask import Flask, request
 from flask_restx import Api
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
+from api import app
 
 
 UPLOAD_FOLDER = '/receives'
 ALLOWED_EXTENSIONS = {'word', 'pdf'}
 
-app = Flask(__name__)
+
 CORS(app)
 app.config['JSON_AS_ASCII'] = False
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
